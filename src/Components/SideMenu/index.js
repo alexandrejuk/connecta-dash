@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Layout, Menu, Icon } from 'antd';
+import { Link } from 'react-router-dom';
 
 const { Sider } = Layout;
 const { SubMenu: SubMenuItem , Item: MenuItem } = Menu;
@@ -8,7 +9,7 @@ const { SubMenu: SubMenuItem , Item: MenuItem } = Menu;
 class SideMenu extends Component {
 
   renderMenuItem = (route) => {
-    const { name, subroutes, icon = 'profile' } = route;
+    const { name, subroutes, icon = 'profile', path } = route;
     const title = (
       <span>
         <Icon type={icon} />
@@ -16,9 +17,9 @@ class SideMenu extends Component {
       </span>
     )
 
-    const renderSubMenuItem = ({ name:itemName }) => (
+    const renderSubMenuItem = ({ name:itemName, path: pathName}) => (
       <MenuItem key={itemName}>
-        {itemName}
+        <Link to={pathName}>{itemName}</Link>
       </MenuItem>
     )
 
@@ -28,7 +29,9 @@ class SideMenu extends Component {
       </SubMenuItem>
     ) : (
       <MenuItem key={name}>
-        {title}
+        <Link to={path}>
+          {title}
+        </Link>
       </MenuItem>
     )
   }

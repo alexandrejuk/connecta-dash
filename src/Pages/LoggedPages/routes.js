@@ -1,5 +1,20 @@
 import React from 'react';
+
+const oi = () => <div>Nome 4</div>
 const routes = [
+  {
+    name: 'Home',
+    allowedRoles: ['*'],
+    path: '/',
+    exact: true,
+    component: () => <div>Home</div>,
+  },
+  {
+    name: 'Cadastro',
+    allowedRoles: ['*'],
+    path: '/cadastro',
+    component: oi,
+  },
   {
     name: 'Produtos',
     icon: 'barcode',
@@ -8,17 +23,17 @@ const routes = [
     subroutes: [
       {
         name: 'Cadastro',
-        allowedRoles: ['admin'],
+        allowedRoles: ['*'],
         component: () => (<div>Cadastro 2</div>),
         path: '/produtos/cadastro'
+      },
+      {
+        name: 'Nome',
+        allowedRoles: ['*'],
+        component: () => (<div>Nome 4</div>),
+        path: '/produtos/nome'
       }
     ],
-  },
-  {
-    name: 'Cadastro',
-    allowedRoles: ['*'],
-    path: '/cadastro',
-    component: () => (<div>Cadastro</div>),
   },
 ]
 

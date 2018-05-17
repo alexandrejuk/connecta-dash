@@ -19,7 +19,7 @@ class ProtectedRoute extends Component {
     } 
     
     const { roles = [] } = login
-    const hasPermissions = roles.map(role => allowedRoles.some(role))
+    const hasPermissions = roles.map(role => allowedRoles.some(r => r === role))
     return hasPermissions.some(role => role);
   }
 
@@ -31,8 +31,6 @@ class ProtectedRoute extends Component {
       redirectTo = '/login',
       exact
     } = this.props
-
-    console.log(component)
 
     if(typeof component !== 'function') {
       return null
