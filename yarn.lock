@@ -5848,7 +5848,7 @@ raf@3.4.0:
   dependencies:
     performance-now "^2.1.0"
 
-ramda@0.25.0:
+ramda@0.25.0, ramda@^0.25.0:
   version "0.25.0"
   resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.25.0.tgz#8fdf68231cffa90bc2f9460390a0cb74a29b29a9"
 
@@ -6378,9 +6378,9 @@ react-slick@~0.23.1:
     lodash.debounce "^4.0.8"
     resize-observer-polyfill "^1.5.0"
 
-react-vanilla-form@^0.4.0:
+"react-vanilla-form@https://github.com/derekstavis/react-vanilla-form":
   version "0.4.0"
-  resolved "https://registry.yarnpkg.com/react-vanilla-form/-/react-vanilla-form-0.4.0.tgz#a61c892d5ae2d50fcdd6af8d443c9c7fc4f4fbed"
+  resolved "https://github.com/derekstavis/react-vanilla-form#096b05e430a41b549e79daeed632dcc6bb2db463"
   dependencies:
     ramda "0.25.0"
 

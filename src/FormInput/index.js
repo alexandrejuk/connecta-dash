@@ -1,17 +1,17 @@
-import React, { PureComponent, Component } from 'react'
+import React, { Component } from 'react'
 import {
   Input,
-} from 'antd'
-
+} from 'antd';
+import { omit, equals } from 'ramda';
+ 
 import './styles.css'
 
 export default class FormInput extends Component {
-  // shouldComponentUpdate(prevProp){
-  //   console.log(prevProp.name !== this.props.name ||
-  //     prevProp.value !== this.props.value)
-  //   return prevProp.name !== this.props.name ||
-  //   prevProp.value !== this.props.value
-  // }
+  shouldComponentUpdate(nextProp){
+    const previous = omit(['onChange'], nextProp)
+    const next = omit(['onChange'], this.props)
+    return !equals(previous, next);
+  }
 
   render = () => {
     const {
@@ -19,11 +19,12 @@ export default class FormInput extends Component {
       children,
       error,
       name,
+      type = "text",
       onChange,
       value,
     } = this.props
 
-    const inputProps = { name, onChange, value };
+    const inputProps = { name, onChange, value, type };
     return (<div className="form-input">
       <div className='form-input-label'>
         <label className='input-label'>{label}</label>

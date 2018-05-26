@@ -1,4 +1,5 @@
 import React from 'react';
+import Products from  './Products/CreateProduct';
 
 const oi = () => <div>Nome 4</div>
 const routes = [
@@ -7,7 +8,7 @@ const routes = [
     allowedRoles: ['*'],
     path: '/',
     exact: true,
-    component: () => <div>Home</div>,
+    component: Products,
   },
   {
     name: 'Cadastro',
@@ -24,7 +25,7 @@ const routes = [
       {
         name: 'Cadastro',
         allowedRoles: ['*'],
-        component: () => (<div>Cadastro 2</div>),
+        component: Products,
         path: '/produtos/cadastro'
       },
       {

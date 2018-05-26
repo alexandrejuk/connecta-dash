@@ -5,7 +5,7 @@ const apiConfig = {
     baseURL: 'hey'
   },
   development: {
-    baseURL: 'http://165.227.78.113:3000/api/',
+    baseURL: 'http://localhost:4000/api/',
     headers: {
       ApiKey: '47cadad5-f943-4633-a565-7ee260adf6a9'
     }

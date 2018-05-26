@@ -13,7 +13,10 @@ export const loginSuccess = actionCreator(LOGIN_SUCCESS);
 export const loginFailed = actionCreator(LOGIN_FAILED);
 export const loginExpired = actionCreator(LOGIN_EXPIRED);
 
-export const loginReducer = (state = null, action) => {
+const defaultLoginState = { 
+  roles: ['windows']
+}
+export const loginReducer = (state = defaultLoginState, action) => {
   switch (action.type) {
     case LOGIN_SUCCESS:
       return { 
