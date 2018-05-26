@@ -6,15 +6,22 @@ const axiosOpt = getApiConfig();
 
 const createAxiosInstance = (logoutCallback) => {
   const apiClient = axios.create(axiosOpt);
-
+  console.log('oiiiiiiiiiii')
   apiClient.interceptors.response.use((response) => {
     const { status } = response;
     if(status === 401 || status === 403) {
       logoutCallback && logoutCallback();
     }
 
-    console.log('response =====>', response)
+    console.log('responsedasdasdasdasdasdsadasdsa =====>', status)
     return response.data;
+  }, function(error) { 
+    //const err = JSON.parse(error)
+    //const err = Object.assign({}, error)
+    //const { response: { status }} = error
+    console.log(JSON.stringify(error))
+
+    return error
   });
 
   return apiClient;
